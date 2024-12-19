@@ -1,0 +1,21 @@
+---
+// src/components/Stacks.astro
+const stacks = [
+    { name: 'Figma', content: 'Con figma puedo crear interfaces UI/UX y Diseños increibles.' },
+    { name: 'Styles', content: 'Con CSS y TailwindCSS puedo darle estilos a mis proyectos.' },
+    { name: 'Astro', content: 'Con Astro puedo crear sitios web estáticos y dinámicos.' },
+    { name: 'Next.Js', content: 'Con Next.Js puedo crear aplicaciones web y móviles.' },
+];
+---
+
+<section id="stacks" class="text-center mt-10">
+    <h2 class="text-4xl font-bold mb-4">Stacks</h2>
+    <ul class="list-none flex flex-col md:flex-row items-center justify-center gap-x-4">
+        {stacks.map(stack => (
+            <li class="w-full h-60 flex flex-col gap-3 bg-gradient-to-b from-purple-500 to-transparent text-slate-50 text-center px-4 py-4 rounded-lg hover:bg-purple-500 ease-in-out duration-200">
+                <h3 class="text-4xl font-bold">{stack.name}</h3>
+                <p class="text text-slate-100 select-none">{stack.content}</p>
+            </li>
+        ))}
+    </ul>
+</section>

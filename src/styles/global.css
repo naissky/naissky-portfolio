@@ -1,0 +1,18 @@
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff; /* Color de la pista de la barra */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    position: absolute;
+  background: #666666; /* Color de la barra de desplazamiento */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color al pasar el mouse por la barra */
+}

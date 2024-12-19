@@ -1,0 +1,31 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const works = await getCollection("works");
+---
+
+<Layout>
+  <Container>
+    <section id="proyects" class="mt-10">
+      <h2 class="text-4xl font-bold mb-4">Proyectos</h2>
+      <ul class="list-none flex flex-col gap-4">
+        {
+          works.map((work) => (
+            <li class="w-full h-60 flex flex-row gap-3 bg-dribble-yellow rounded-3xl px-4 py-4">
+              <div class="w-full md:w-1/2 flex flex-col gap-y-3">
+                <h3 class="text-4xl font-bold">{work.data.title}</h3>
+                <p class="text-dribble-night/70">{work.body}</p>
+              </div>
+              <div class="hidden md:flex w-1/2 overflow-hidden">
+                <img src="/proyect-1.png" alt="" class="w-full h-full object-cover rounded-3xl" />
+              </div>
+              
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </Container>
+</Layout>

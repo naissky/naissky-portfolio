@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+
+const works = await getCollection("works");
+const header = works.slice(0, 1);
+
+---
+
+<div class="flex flex-col items-center pt-16">
+  <h1 class="text-4xl text-dribble-night font-bold">Proyectos</h1>
+  
+  <ul class="grid grid-cols-9 gap-2.5 py-5">
+    {
+      works.map((work) => (
+        <li class="flex flex-col items-start col-span-full md:col-span-3 bg-dribble-yellow p-4 rounded-3xl">
+          
+          <div class="flex overflow-hidden rounded-2xl max-w-[300px] max-h-[150px]">
+            <img src="/proyect-1.png" class="w-full bg-center object-cover" />
+          </div>
+          <div class="flex flex-col mt-2 gap-2">
+            <h3 class="text-xl font-bold font-unbounded">
+                {work.data.title}
+            </h3>
+            <p class="text-sm text-dribble-night/70">
+                {work.data.description}
+            </p>
+          </div>
+          
+        </li>
+      ))
+    }
+  </ul>
+  <a href="/proyects" class="text-dribble-night font-medium underline hover:text-dribble-night/70">
+    Ver todos los proyectos
+  </a>
+</div>
